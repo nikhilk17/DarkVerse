@@ -46,7 +46,6 @@ const Footer = () => {
 <h1 className="md:text-[30vh] lg:text-[20vh] text-[13vh] sm:text-[13vh] font-bold text-white leading-none -translate-y-96 opacity-0">e</h1>
 <h1 className="md:text-[30vh] lg:text-[20vh] text-[13vh] sm:text-[13vh] font-bold text-white leading-none -translate-y-96 opacity-0">.</h1>
     </div>
-    <h1 className='text-white'>darkverse@gmail.com</h1>
   </div>
   )
 }

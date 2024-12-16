@@ -18,8 +18,8 @@ const Exp = () => {
   })
   return (
     <div className="z-30 relative h-screen w-full bg-white flex justify-center items-center exp overflow-hidden">
-    <div className="flex justify-center flex-col items-center overflow-hidden">
-    <div className='h-40 w-40 absolute md:left-72 md:top-48 lg:left-20 lg:top-80 lg:h-64 lg:w-64 top-56 '>
+    <div className="flex justify-center flex-col gap-10 items-center overflow-hidden">
+    <div className='h-40 w-40 '>
        <video
         autoPlay
         loop
