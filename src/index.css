@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* *{
+  cursor: none;
+} */
+.grid > div {
+  grid-row: var(--r);
+  grid-column: var(--c);
+}
+body{
+  background-color: black;
+}
+@font-face {
+  font-family: 'MyCustomFont'; /* Name of the font */
+  src: url('/src/assets/font/Aimpie Design Font.ttf') format('truetype');
+  font-weight: normal; /* Adjust based on your font */
+  font-style: normal; /* Use 'italic' if required */
+}
+@font-face {
+  font-family: 'AnotherFont'; /* New font */
+  src: url('/src/assets/font/another.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.menu{
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(23, 23, 23); */
+  border: 1px solid rgb(143, 143, 143);
+  z-index: 50;
+  .burger{
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+}
+.burger::after, .burger::before{
+  content: "";
+  display: block;
+  width: 50%;
+  height: 1.2px;
+  margin: auto;
+  background-color: rgb(137, 137, 137);
+  position: relative;
+  transition: all 0.8s;
+}
+.burger::before{
+  top:-2px;
+}
+.burger::after{
+  top:2px;
+}
+/* Active State for Burger Menu */
+.burger.isActive::before {
+  top: 1px;
+  background-color: black;
+  transform: rotate(-45deg);
+}
+
+.burger.isActive::after {
+  top: 0px;
+  background-color: black;
+
+  transform: rotate(45deg);
+}
+#animated-path {
+  stroke-dasharray: 1000; /* Set to a value greater than the path length */
+  stroke-dashoffset: 1000; /* Initially hidden */
+  animation: fillPath 8s linear forwards; /* Animate for 5 seconds */
+}
+
+@keyframes fillPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.ani-but::before,.ani-but::after {
+  content: "";
+  background-color: red;
+  height: 102%;
+  width: 102%; /* Matches the button width */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%; /* Ensure it's behind the button */
+  padding: 25px;
+  z-index: -1;
+  border-radius: 6px;
+  background-image: conic-gradient(
+    from var(--angle),
+    rgb(0, 0, 0) 60%,
+    rgb(0, 0, 0) 50%,
+    rgb(0, 0, 0) 20%,
+    rgb(255, 255, 255) 80%,
+    rgb(0, 0, 0) 80%
+);
+  animation: 10s spin linear infinite;
+}
+
+.ani-but {
+  position: relative; /* Ensures the pseudo-element positions correctly */
+}
+@keyframes spin {
+  from {
+      --angle: 0deg;
+  }
+  to {
+      --angle: 360deg;
+  }
+}
