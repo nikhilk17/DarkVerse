@@ -119,9 +119,8 @@ const Home = () => {
         <p className="hel text-sm font-another text-[#BABDF9] md:text-xl">
         Designed for dreamers, crafted for creators.
         </p>
-        <div className='hel flex flex-col gap-2 md:flex-row'>
-        <center className='text-3xl lg:text-[5vh] font-custom font-bold'>Your Digital Universe, Designed to</center>
-        <center className='text-3xl lg:text-[5vh] font-custom font-bold justify-center'>Shine in the Dark.</center>
+        <div className='hel'>
+        <center className='text-3xl lg:text-[5vh] font-custom font-bold'>Your Digital Universe, Designed to Shine in the Dark.</center>
         </div>
         </div>
 
