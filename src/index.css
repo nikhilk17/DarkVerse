@@ -63,7 +63,6 @@ body{
 .burger.isActive::after {
   top: 0px;
   background-color: black;
-
   transform: rotate(45deg);
 }
 #animated-path {

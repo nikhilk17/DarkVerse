@@ -14,6 +14,9 @@ import Exp from "./components/Exp";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Animate from "./components/Animate";
+import Zoom from "./components/Zoom";
+import LoadingAnimation from "./components/LoadingAnimation";
+import Cursor from "./components/Cursor";
 
 export default function App() {
   gsap.registerPlugin(ScrollTrigger);
@@ -82,61 +85,6 @@ export default function App() {
   //     ease: 'circ.inOut',
   //   })
   // })
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    tl.from('.text1', {
-      opacity: 0,
-      duration: 0.01,
-    }
-    )
-    tl.from('.text1', {
-      duration: 1,
-      y: 200,
-    }
-    )
-    tl.to('.text1', {
-      opacity: 1,
-      duration: 0.01
-    })
-    tl.to('.text1', {
-      duration: 1,
-    },'ani')
-    tl.from('.load',{
-      width:0,
-      duration:1.5,
-    },'ani')
-    tl.to('.text1', {
-      duration: 1,
-      y: -100,
-    },'one')
-    tl.to('.load',{
-      x:350,
-      duration:1,
-    },'one')
-    tl.to('.intro', {
-      y: -1000,
-      duration: 0.5,
-      
-      ease: 'circ.in',
-    })
-    tl.to('.text1', {
-      opacity: 0,
-    })
-  })
-  useGSAP(()=>{
-    //mouse move
-    const cursor = document.querySelector('.cursor')
-    document.addEventListener('mousemove',e=>{
-     const x = e.clientX-12
-      const y = e.clientY-12
-      gsap.to(cursor,{
-        x:x,
-        y:y,
-        duration:1,
-        ease:'back.out',
-      })
-    })
-  })
   return (
     <div>
       {/* intro animation */}
@@ -147,20 +95,15 @@ export default function App() {
           <h1 className="text-4xl -translate-x-36 opacity-0 text3">CELEBRATE &nbsp;</h1>
         </div>
       </div> */}
-<div className="fixed left-0 top-0 h-screen w-full bg-slate-200 z-50 intro">
-  <div className="text-black flex flex-col gap-4 justify-center items-center h-screen relative overflow-hidden">
-    <div className="overflow-hidden flex justify-center items-center gap-2 flex-col">
-    <h1 className="text1  text-5xl md:text-8xl text-black font-serif font-bold animate-text">DarkVerse.</h1>
-    <div className="h-1 w-60 md:w-80 rounded-full overflow-hidden">
-      <div className="load h-1 w-full bg-slate-600"></div>
-    </div>
-    </div>
-  </div>
-</div>
-      <div className="cursor bg-white h-6 w-6 rounded-full z-50 fixed filter pointer-events-none mix-blend-difference"> </div>
+
+
+      
+      {/* <LoadingAnimation /> */}
+      <Cursor />
       <Exp />
       <Home/>
       <TextReveal />
+      <Zoom />
       <Video />
       <OurWork />
       <Blog />
