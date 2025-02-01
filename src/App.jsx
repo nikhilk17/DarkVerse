@@ -98,7 +98,7 @@ export default function App() {
 
 
       
-      {/* <LoadingAnimation /> */}
+      <LoadingAnimation />
       <Cursor />
       <Exp />
       <Home/>
